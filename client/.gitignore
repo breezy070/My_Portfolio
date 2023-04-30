@@ -1,3 +1,6 @@
+
+node_modules
+
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -6,7 +9,7 @@
 /assets
 /.pnp
 .pnp.js
-videoInfo.txt
+/videoInfo.txt
 /public
 
 # testing
