@@ -5,18 +5,17 @@ node_modules
 
 # dependencies
 /node_modules
-/public
+
 /assets
 /.pnp
 .pnp.js
 /videoInfo.txt
-/public
+
 
 # testing
 /coverage
 
-# production
-/build
+
 
 # misc
 .DS_Store
