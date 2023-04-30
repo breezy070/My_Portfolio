@@ -1,0 +1,56 @@
+@import "../../global.scss";
+
+.menu {
+  width: 345px;
+  height: 100vh;
+  background-color: $mainColor;
+  position: fixed;
+  top: 0;
+  right: -345px; //this is so it goes off the screen by the original width of 300px so its negative 300px
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s ease;
+
+  @include mobile {
+    width: 100%;
+    right: -100%;
+  }
+
+  &.active {
+    right: 0;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 35px;
+    font-weight: 500;
+    color: white;
+    width: 60%;
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    li {
+      margin-bottom: 25px;
+
+      a {
+        font-size: inherit;
+        color: inherit;
+        text-decoration: none;
+      }
+
+      &:hover {
+        font-weight: 700;
+      }
+    }
+  }
+}
