@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-/assets
+/public
 /.pnp
 .pnp.js
 /videoInfo.txt
