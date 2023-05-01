@@ -2,7 +2,7 @@ import "./intro.scss";
 import { init } from "ityped";
 import { useEffect, useRef } from "react";
 
-export default function Intro() {
+export default function Intro({ mode }) {
   const textRef = useRef();
 
   useEffect(() => {
@@ -29,9 +29,16 @@ export default function Intro() {
   }, []);
 
   return (
-    <div className="intro" id="intro">
+    <div
+      className={"intro" + (mode === true ? " lightMode" : " darkMode")}
+      id="intro"
+    >
       <div className="left">
-        <div className="imgContainer">
+        <div
+          className={
+            "imgContainer" + (mode === true ? " lightMode" : " darkMode")
+          }
+        >
           <img src="assets/fabrizio.png" alt="" />
         </div>
       </div>

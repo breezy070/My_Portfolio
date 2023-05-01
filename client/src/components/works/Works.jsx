@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./works.scss";
 
-export default function Works() {
+export default function Works({ mode }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const data = [
     {
@@ -33,7 +33,10 @@ export default function Works() {
       : setCurrentSlide(currentSlide < data.length - 1 ? currentSlide + 1 : 0);
   };
   return (
-    <div className="works" id="works">
+    <div
+      className={"works" + (mode === true ? " lightMode" : " darkMode")}
+      id="works"
+    >
       <div
         className="slider"
         style={{ transform: `translateX(-${currentSlide * 100}vw)` }}

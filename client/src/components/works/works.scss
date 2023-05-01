@@ -8,6 +8,10 @@
   position: relative;
   overflow: hidden;
 
+  &.darkMode {
+    background-color: black;
+  }
+
   .arrow {
     height: 50px;
     position: absolute;

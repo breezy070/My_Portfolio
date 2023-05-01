@@ -1,10 +1,18 @@
 import "./topbar.scss";
 import PersonIcon from "@mui/icons-material/Person";
 import EmailIcon from "@mui/icons-material/Email";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
 
-export default function topbar({ menuOpen, setMenuOpen }) {
+export default function topbar({ menuOpen, setMenuOpen, mode, setMode }) {
   return (
-    <div className={"topbar " + (menuOpen && "active")}>
+    <div
+      className={
+        "topbar " +
+        (menuOpen && "active") +
+        (mode === true ? " lightMode" : " darkMode")
+      }
+    >
       <div className="wrapper">
         <div className="left">
           <a href="#intro" className="logo">
@@ -21,7 +29,19 @@ export default function topbar({ menuOpen, setMenuOpen }) {
         </div>
 
         <div className="right">
-          <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+          <div className="darkModeIcon" id="darkMode">
+            {mode ? (
+              <LightModeIcon className="icon" onClick={() => setMode(!mode)} />
+            ) : (
+              <DarkModeIcon className="icon" onClick={() => setMode(!mode)} />
+            )}
+          </div>
+          <div
+            className={
+              "hamburger" + (mode === true ? " lightMode" : " darkMode")
+            }
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
             <span className="line1"></span>
             <span className="line2"></span>
             <span className="line3"></span>

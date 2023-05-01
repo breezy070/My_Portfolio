@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./contact.scss";
 import { toast } from "react-toastify";
 
-export default function Contact() {
+export default function Contact({ mode }) {
   const [message, setMessage] = useState(false);
 
   const handleSubmit = (e) => {
@@ -11,7 +11,10 @@ export default function Contact() {
     toast.success("Message Sent ! I'll reply ASAP");
   };
   return (
-    <div className="contact" id="contact">
+    <div
+      className={"contact" + (mode === true ? " lightMode" : " darkMode")}
+      id="contact"
+    >
       <div className="left">
         <img src="assets/shake.svg" alt="" />
       </div>

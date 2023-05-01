@@ -4,6 +4,21 @@
   background-color: white;
   display: flex;
 
+  &.darkMode {
+    background-color: black;
+    h2 {
+      color: white;
+    }
+    img {
+      background-color: rgb(202, 187, 187);
+    }
+    form,
+    input,
+    textarea {
+      background-color: rgb(202, 187, 187);
+    }
+  }
+
   @include mobile {
     flex-direction: column;
   }

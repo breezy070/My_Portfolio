@@ -12,17 +12,23 @@ import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mode, setMode] = useState(true);
 
   return (
     <div className="app">
-      <Topbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <Topbar
+        menuOpen={menuOpen}
+        setMenuOpen={setMenuOpen}
+        mode={mode}
+        setMode={setMode}
+      />
       <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <div className="sections">
-        <Intro />
-        <Portofolio />
-        <Works />
-        <Testimonials />
-        <Contact />
+        <Intro mode={mode} />
+        <Portofolio mode={mode} />
+        <Works mode={mode} />
+        <Testimonials mode={mode} />
+        <Contact mode={mode} />
       </div>
       <ToastContainer />
     </div>

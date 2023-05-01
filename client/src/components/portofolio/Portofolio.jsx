@@ -9,7 +9,7 @@ import {
   contentPortfolio,
 } from "../../data";
 
-export default function Portofolio() {
+export default function Portofolio({ mode }) {
   const [selected, setSelected] = useState("featured");
   const [data, setData] = useState([]);
   const list = [
@@ -58,7 +58,10 @@ export default function Portofolio() {
   }, [selected]);
 
   return (
-    <div className="portofolio" id="portofolio">
+    <div
+      className={"portofolio" + (mode === true ? " lightMode" : " darkMode")}
+      id="portofolio"
+    >
       <h1>Portfolio</h1>
       <ul>
         {list.map((item) => (

@@ -1,6 +1,6 @@
 import "./testimonials.scss";
 
-export default function Testimonials() {
+export default function Testimonials({ mode }) {
   const data = [
     {
       id: 1,
@@ -29,11 +29,20 @@ export default function Testimonials() {
     },
   ];
   return (
-    <div className="testimonials" id="testimonials">
+    <div
+      className={"testimonials" + (mode === true ? " lightMode" : " darkMode")}
+      id="testimonials"
+    >
       <h1>Testimonials</h1>
       <div className="container">
         {data.map((d) => (
-          <div className={d.featured ? "card featured" : "card"}>
+          <div
+            className={
+              d.featured
+                ? "card featured" + (mode === true ? " lightMode" : " darkMode")
+                : "card" + (mode === true ? " lightMode" : " darkMode")
+            }
+          >
             <div className="top">
               <img src="assets/right-arrow.png" className="left" alt="" />
               <img className="user" src={d.img} alt="" />
