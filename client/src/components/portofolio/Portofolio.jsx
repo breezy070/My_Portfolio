@@ -25,14 +25,6 @@ export default function Portofolio({ mode }) {
       id: "mobile",
       title: "Mobile App",
     },
-    {
-      id: "design",
-      title: "Design",
-    },
-    {
-      id: "content",
-      title: "Content",
-    },
   ];
 
   useEffect(() => {
